@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Darshika Kutriyar | Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    :root {
+      --primary-bg: linear-gradient(135deg, #e96443, #904e95);
+      --light-text: #fff;
+      --dark-text: #333;
+      --light-bg: #fff;
+      --dark-bg: #222;
+    }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      scroll-behavior: smooth;
+      background: var(--primary-bg);
+      color: var(--light-text);
+      transition: 0.3s;
+    }
+    body.light-mode {
+      background: var(--light-bg);
+      color: var(--dark-text);
+    }
+    nav {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      background: var(--light-bg);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px 0;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      z-index: 100;
+    }
+    nav a {
+      margin: 0 15px;
+      color: var(--dark-text);
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .toggle-mode {
+      position: absolute;
+      right: 20px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      font-size: 20px;
+      color: var(--dark-text);
+    }
+    .hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      margin: 0;
+    }
+    .hero h2 {
+      font-size: 1.5rem;
+      margin-top: 10px;
+    }
+    .highlight {
+      background: #00000088;
+      padding: 0 10px;
+      border-radius: 5px;
+    }
+    section {
+      padding: 80px 20px;
+      background: transparent;
+    }
+    .projects, .about, .skills, #contact {
+      text-align: center;
+    }
+    .project-card, .skill-bar {
+      background: white;
+      color: #333;
+      margin: 20px auto;
+      padding: 20px;
+      border-radius: 12px;
+      max-width: 400px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      transition: 0.3s ease;
+    }
+    .project-card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    }
+    .skill-bar {
+      text-align: left;
+    }
+    .skill-bar h4 {
+      margin: 10px 0 5px;
+    }
+    .bar {
+      background: #ddd;
+      border-radius: 20px;
+      overflow: hidden;
+    }
+    .bar-fill {
+      height: 10px;
+      background: #6200ea;
+      width: 0;
+      animation: fillBar 2s ease forwards;
+    }
+    @keyframes fillBar {
+      100% {
+        width: 90%;
+      }
+    }
+    .contact-form {
+      max-width: 500px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+    .contact-form button {
+      background: #6200ea;
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .contact-form button:hover {
+      background: #3700b3;
+    }
+    .social-icons {
+      margin-top: 20px;
+    }
+    .social-icons a {
+      margin: 0 10px;
+      color: white;
+      font-size: 24px;
+      text-decoration: none;
+    }
+    body.light-mode .social-icons a {
+      color: #333;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #fff;
+    }
+    body.light-mode footer {
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="#hero">Home</a>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+    <button class="toggle-mode" onclick="toggleMode()" title="Toggle Light/Dark Mode">
+      <i class="fas fa-adjust"></i>
+    </button>
+  </nav>
+
+  <section class="hero" id="hero">
+    <h1>Hi, I'm <span class="highlight">Darshika Kutriyar</span></h1>
+    <h2><span id="typing"></span></h2>
+  </section>
+
+  <section class="about" id="about">
+    <h2 data-aos="fade-up">About Me</h2>
+    <p data-aos="fade-up">I am a BTech student in Computer Science with a focus on AI/ML, passionate about web development, UI/UX, and building meaningful tech solutions.</p>
+  </section>
+
+  <section class="skills" id="skills">
+    <h2 data-aos="fade-up">My Skills</h2>
+    <div class="skill-bar" data-aos="fade-right">
+      <h4>HTML</h4>
+      <div class="bar"><div class="bar-fill" style="width: 90%"></div></div>
+    </div>
+    <div class="skill-bar" data-aos="fade-right">
+      <h4>CSS</h4>
+      <div class="bar"><div class="bar-fill" style="width: 85%"></div></div>
+    </div>
+    <div class="skill-bar" data-aos="fade-right">
+      <h4>JavaScript</h4>
+      <div class="bar"><div class="bar-fill" style="width: 75%"></div></div>
+    </div>
+    <div class="skill-bar" data-aos="fade-right">
+      <h4>Python</h4>
+      <div class="bar"><div class="bar-fill" style="width: 80%"></div></div>
+    </div>
+  </section>
+
+  <section class="projects" id="projects">
+    <h2 data-aos="fade-up">My Projects</h2>
+    <div class="project-card" data-aos="zoom-in">
+      <i class="fa-solid fa-language fa-2x"></i>
+      <h3>UniTranslate</h3>
+      <p>A platform to bridge language barriers in colleges.</p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2 data-aos="fade-up">Get in Touch</h2>
+    <form class="contact-form" data-aos="fade-up">
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea rows="4" placeholder="Your Message"></textarea>
+      <button type="submit">Send</button>
+    </form>
+    <p>Email: <a href="mailto:kutriyardarshika@gmail.com" style="color:#fff; text-decoration: underline;">kutriyardarshika@gmail.com</a></p>
+    <div class="social-icons">
+      <a href="https://github.com/dee-kay05" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://linkedin.com/in/darshika-kutriyar-343452335" target="_blank"><i class="fab fa-linkedin"></i></a>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Darshika Kutriyar. All Rights Reserved.</p>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init();</script>
+  <script>
+    const roles = ["Web Developer", "AI Explorer", "Student Coder"];
+    let i = 0, j = 0, isDeleting = false;
+
+    function typeEffect() {
+      const typing = document.getElementById("typing");
+      let current = roles[i];
+      typing.textContent = isDeleting ? current.slice(0, --j) : current.slice(0, ++j);
+
+      if (!isDeleting && j === current.length) {
+        isDeleting = true;
+        setTimeout(typeEffect, 1500);
+        return;
+      }
+
+      if (isDeleting && j === 0) {
+        isDeleting = false;
+        i = (i + 1) % roles.length;
+      }
+
+      setTimeout(typeEffect, 120);
+    }
+    typeEffect();
+
+    function toggleMode() {
+      document.body.classList.toggle('light-mode');
+    }
+  </script>
+</body>
+</html>
